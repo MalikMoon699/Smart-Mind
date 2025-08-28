@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { sitelogo } from "../assets/images/Images";
 import { AlignRight, DiamondPlus, SquarePen, Trash2 } from "lucide-react";
 import "../assets/styles/SideBar.css";
-import { href } from "react-router";
 
 const SideBar = ({ selectedChat, setSelectedChat, chats, setChats }) => {
   const [isMobile, setIsMobile] = useState(false);
