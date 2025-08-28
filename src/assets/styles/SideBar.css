@@ -1,0 +1,118 @@
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 6px;
+}
+
+.sidebar-header > img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
+.sidebar-header > h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-new-chat-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  background: #794c7f;
+  border-radius: 7px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-new-chat-container:hover {
+  background-color: #995ba1;
+}
+
+.sidebar-chats-label-header {
+  padding: 35px 0px 5px;
+  color: #ffffff8c;
+  font-weight: 100;
+}
+
+.sidebar-chat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-align: start;
+  cursor: pointer;
+  margin: 10px 0px;
+  transition: all 0.3s ease-in-out;
+  background: #d6d6d636;
+}
+
+.sidebar-chat:hover {
+  background-color: #a541b3 !important;
+}
+
+.sidebar-chat > h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sidebar-chat.active {
+  background-color: #7d3986;
+  color: white;
+}
+
+.delete-chat-icon {
+  background-color: #000000;
+  padding: 3px;
+  display: none;
+  border-radius: 5px;
+}
+
+.sidebar-chat:hover .delete-chat-icon {
+  display: block;
+}
+
+.sidebar-chat:hover .delete-chat-icon {
+  background-color: #d6d6d636;
+  display: block;
+}
+
+.sidebar-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0px 30px;
+}
+
+.close-sidebar-icon {
+  display: none;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background: #7d398657;
+  width: 100vw;
+  padding: 12px 15px;
+}
+
+.mobile-nav > div {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mobile-nav > div > span {
+  color: #7d3986;
+  margin-right: 5px;
+}

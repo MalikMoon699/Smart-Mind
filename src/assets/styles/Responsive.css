@@ -1,0 +1,37 @@
+@media only screen and (max-width: 768px) {
+  .mobile-nav {
+    display: flex !important;
+  }
+
+  .sidebar-container {
+    left: -260px !important;
+  }
+
+  .delete-chat-icon{
+    display: flex !important;
+  }
+
+  .chat-container {
+    margin-left: 0px;
+    margin-top: 90px;
+    padding: 5px;
+  }
+
+  .close-sidebar-icon{
+    display: block !important;
+  }
+
+  .sidebar-vissible {
+  left: 0px !important;
+  }
+  .send-container > div{
+    width: 95% !important;
+  }
+}
+
+
+@media only screen and (max-width: 375px) {
+  .chat-same{
+    max-width: 260px;
+  }
+}

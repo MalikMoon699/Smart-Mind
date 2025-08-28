@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, popins;
+}
+
+body {
+  background-color: #212121;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.sidebar-container {
+  position: fixed;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #1e1021;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  border-right: 1px solid white;
+}
+
+.chat-container {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  margin-left: 260px;
+}
