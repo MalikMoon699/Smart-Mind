@@ -46,12 +46,6 @@ export default function FormatResponse({text}) {
               </>
             ) : (
               <code
-                // style={{
-                //   backgroundColor: "#333",
-                //   padding: "2px 6px",
-                //   borderRadius: "4px",
-                //   fontSize: "0.9em",
-                // }}
                 {...props}
               >
                 {children}
