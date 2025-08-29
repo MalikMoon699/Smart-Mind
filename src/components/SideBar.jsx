@@ -9,6 +9,8 @@ const SideBar = ({ selectedChat, setSelectedChat, chats, setChats }) => {
   const handleDelete = (Id) => {
     const newChats = chats.filter((chat) => chat.id !== Id);
     setChats(newChats);
+    setSelectedChat(null);
+    setIsMobile(false);
     localStorage.setItem("chatsList", JSON.stringify(newChats));
   };
 
@@ -20,10 +22,10 @@ const SideBar = ({ selectedChat, setSelectedChat, chats, setChats }) => {
     const newChatData = { id: newId, title: "New chat", Chats: [] };
     const newChats = [...existingChats, newChatData];
     setChats(newChats);
+    setIsMobile(false);
     localStorage.setItem("chatsList", JSON.stringify(newChats));
     setSelectedChat(newId);
   };
-
 
   if (!chats || chats.length === 0) {
     return (

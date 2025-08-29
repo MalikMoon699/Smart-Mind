@@ -40,11 +40,11 @@ const Chat = ({ selectedChat, setSelectedChat, chats, setChats }) => {
      const updatedChats = chats.map((chat) => {
        if (chat.id === selectedChat) {
          const isFirstMessage = chat.Chats.length === 0;
-         const addTitle = formatTitle(question.slice(0, 30));
+         const addTitle = formatTitle(question.slice(0, 25));
          const newTitle = isFirstMessage
            ? addTitle === "New chat"
              ? "Latest chat"
-             : addTitle
+             : `${addTitle}...`
            : chat.title;
 
 
