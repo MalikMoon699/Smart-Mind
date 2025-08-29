@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
-    toast.success("Copied!");
+    toast.success("Code Copied!");
   };
   
 export default function FormatResponse({text}) {

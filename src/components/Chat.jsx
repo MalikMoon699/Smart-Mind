@@ -170,10 +170,21 @@ const Chat = ({ selectedChat, setSelectedChat, chats, setChats }) => {
                   style={{ minHeight: "45px", maxHeight: "300px" }}
                   placeholder="Ask anything"
                 />
-
-                <button className="send-btn" onClick={handleAsk}>
-                  Ask
-                </button>
+                {loading ? (
+                  <button
+                    className="send-btn"
+                    style={{
+                      cursor: "not-allowed",
+                      backgroundColor: "rgb(89 94 96 / 69%)",
+                    }}
+                  >
+                    Ask
+                  </button>
+                ) : (
+                  <button className="send-btn" onClick={handleAsk}>
+                    Ask
+                  </button>
+                )}
               </div>
             </div>
           </>

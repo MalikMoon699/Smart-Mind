@@ -11,12 +11,11 @@ const Home = () => {
     setChats(chatsList);
   }, []);
 
-useEffect(() => {
-  if (selectedChat) {
-    window.location.hash = `#${selectedChat}`;
-  }
-}, [selectedChat]);
-
+  useEffect(() => {
+    if (selectedChat) {
+      window.location.hash = `#${selectedChat}`;
+    }
+  }, [selectedChat]);
 
   return (
     <div className="main-container">
