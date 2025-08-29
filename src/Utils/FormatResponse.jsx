@@ -1,8 +1,15 @@
 import React from "react";
+import { Copy } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { toast } from "react-toastify";
 
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Copied!");
+  };
+  
 export default function FormatResponse({text}) {
   return (
     <div
@@ -20,22 +27,31 @@ export default function FormatResponse({text}) {
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
             return !inline && match ? (
-              <SyntaxHighlighter
-                style={materialDark}
-                language={match[1]}
-                PreTag="div"
-                {...props}
-              >
-                {String(children).replace(/\n$/, "")}
-              </SyntaxHighlighter>
+              <>
+                <div className="code-header">
+                  <strong>Code</strong>
+                  <span onClick={() => handleCopy(String(children))}>
+                    <Copy size={15} />
+                    Copy
+                  </span>
+                </div>
+                <SyntaxHighlighter
+                  style={materialDark}
+                  language={match[1]}
+                  PreTag="div"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, "")}
+                </SyntaxHighlighter>
+              </>
             ) : (
               <code
-                style={{
-                  backgroundColor: "#333",
-                  padding: "2px 6px",
-                  borderRadius: "4px",
-                  fontSize: "0.9em",
-                }}
+                // style={{
+                //   backgroundColor: "#333",
+                //   padding: "2px 6px",
+                //   borderRadius: "4px",
+                //   fontSize: "0.9em",
+                // }}
                 {...props}
               >
                 {children}

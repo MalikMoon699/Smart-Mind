@@ -27,11 +27,8 @@
   .send-container > div{
     width: 95% !important;
   }
+
+  .chat-options > span:hover {
+  background: transparent !important;
 }
-
-
-@media only screen and (max-width: 375px) {
-  .chat-same{
-    max-width: 260px;
-  }
 }
