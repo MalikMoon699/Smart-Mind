@@ -38,7 +38,6 @@ const Chat = ({ selectedChat, setSelectedChat, chats, setChats }) => {
   const handleAsk = async () => {
     if (!question.trim() && pendingImages.length === 0) return;
 
-    // Save message locally first
     const updatedChats = chats.map((chat) => {
       if (chat.id === selectedChat) {
         const isFirstMessage = chat.Chats.length === 0;
@@ -77,7 +76,6 @@ const Chat = ({ selectedChat, setSelectedChat, chats, setChats }) => {
     try {
       setLoading(true);
 
-      // Build payload with text + images
       const parts = [];
       if (currentQuestion) {
         parts.push({ text: currentQuestion });
@@ -86,7 +84,7 @@ const Chat = ({ selectedChat, setSelectedChat, chats, setChats }) => {
         pendingImages.forEach((img) => {
           parts.push({
             inlineData: {
-              mimeType: "image/png", // or detect dynamically
+              mimeType: "image/png",
               data: img.replace(/^data:image\/\w+;base64,/, ""),
             },
           });
@@ -100,7 +98,6 @@ const Chat = ({ selectedChat, setSelectedChat, chats, setChats }) => {
         body: JSON.stringify(payload),
       });
       response = await response.json();
-
       const aiReply =
         response?.candidates?.[0]?.content?.parts?.[0]?.text || "No reply";
 
